@@ -19,7 +19,7 @@ export default class Header extends React.Component {
         </a>
         <div className={style.header_title}></div>
         <a className={style.page_menu}>
-          <i className="material-icons">more_vert</i>
+          <i className="material-icons">more_horiz</i>
         </a>
       </header>
     );

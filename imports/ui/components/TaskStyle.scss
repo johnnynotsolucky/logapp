@@ -1,0 +1,36 @@
+@import '{}/imports/ui/stylesheets/base';
+
+.task {
+  @extend .flex_row;
+  
+  .task_details {
+    @extend .flex_column;
+    flex: 1;
+    
+    .task_title {
+      flex: 1;
+      font-size: $large-font-size;
+      line-height: $base-size * 2;
+    }
+    
+    .task_parameters {
+      font-size: $large-font-size * 0.75;
+      line-height: $base-size * 1;
+    }
+  }
+  
+  .task_time_elapsed {
+    line-height: $base-size * 3;
+    min-width: $base-size * 4;
+    text-align: center;
+  }
+  
+  .task_options {
+    cursor: pointer;
+    padding: 0 1rem;
+    
+    i {
+      line-height: $base-size * 3;
+    }
+  }
+}

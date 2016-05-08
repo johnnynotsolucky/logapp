@@ -14,8 +14,16 @@
   @include fullscreen();
 }
 
+.flex {
+  display:flex;
+}
 
 .flex_row {
-  display: flex;
+  @extend .flex;
   flex-direction: row;
+}
+
+.flex_column {
+  @extend .flex;
+  flex-direction: column;
 }

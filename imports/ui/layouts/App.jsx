@@ -7,6 +7,7 @@ import classnames from 'classnames';
 import NavigationDrawer from '../components/NavigationDrawer';
 import Header from '../components/Header';
 import NewTask from '../components/NewTask';
+import TaskList from '../components/TaskList';
 
 import style from './AppStyle';
 
@@ -36,6 +37,7 @@ export default class App extends React.Component {
             <Header toggleNavDrawer={this.toggleNavDrawer} />
             <div className={style.content}>
               <NewTask />
+              <TaskList />
             </div>
           </div>
         </div>
