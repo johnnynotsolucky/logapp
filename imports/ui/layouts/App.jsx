@@ -31,6 +31,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className={style.app_body}>
+        <div>
         <div className={classnames(style.container, style.flex_row)}>
           <NavigationDrawer toggleNavDrawer={this.toggleNavDrawer} open={this.state.navDrawerOpen} />
           <div className={style.page}>
@@ -40,6 +41,7 @@ export default class App extends React.Component {
               <TaskList />
             </div>
           </div>
+        </div>
         </div>
       </div>
     );

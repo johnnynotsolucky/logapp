@@ -7,8 +7,18 @@ header.page_header {
 
   .page_menu {
     cursor: pointer;
-    padding: 0 1rem;
+    padding: 0 $base-size;
     transition: background 0.2s;
+    
+    &:first-child {
+      padding-left: 0;
+      padding-right: $base-size;
+    }
+    
+    &:last-child {
+      padding-left: $base-size;
+      padding-right: 0;
+    }
     
     &:hover {
       background: darken($background-color, 5%);
@@ -20,10 +30,10 @@ header.page_header {
   }
 
   .header_title {
-    margin-left: 0.25em;
+    margin-left: $base-size * 0.25;
     display: inline-block;
-    line-height: 2.6rem;
-    font-size: $large-font-size + 0.25;
+    line-height: $base-size * 3;
+    font-size: $large-font-size;
     flex: 1;
   }
   
