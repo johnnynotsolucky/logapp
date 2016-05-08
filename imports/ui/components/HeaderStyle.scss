@@ -10,13 +10,13 @@ header.page_header {
     padding: 0 1rem;
     color: $color-wetasphalt;
     transition: background 0.2s;
-
+    
     &:hover {
       background: darken($background-color, 5%);
     }
 
     i {
-      line-height: 3rem;
+      line-height: $base-size * 3;
     }
   }
 
@@ -26,5 +26,12 @@ header.page_header {
     line-height: 2.6rem;
     font-size: $large-font-size + 0.25;
     flex: 1;
+  }
+  
+  .toggle_nav_drawer {
+    display: none;
+    @media screen and (max-width: $layout-sm-tablet) {
+      display: block; 
+    }
   }
 }
