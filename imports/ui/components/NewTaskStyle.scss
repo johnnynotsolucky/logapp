@@ -15,6 +15,7 @@ $line-height: $start-button-size - 0.2;
     width: 100%;
     color: $primary-color;
     box-sizing: border-box;
+    border-radius: 0;
 
     &:focus {
       outline: none;
