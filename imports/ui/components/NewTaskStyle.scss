@@ -7,7 +7,7 @@ $line-height: $start-button-size - 0.2;
   flex: 1;
   background: $background-color;
   input {
-    padding-left: $base-size;
+    padding: 1px 0.2rem;
     background: $background-color;
     border:$border-color solid 1px;
     line-height: $line-height;

@@ -28,7 +28,7 @@
 .nav_screen {
   z-index:299;
   
-  background: rgba($primary-color, .25);
+  background: rgba(66, 66, 66, 0.75);
   @include fixed-fullscreen();
   
   visibility: hidden;
