@@ -1,0 +1,39 @@
+@import '{}/imports/ui/stylesheets/base';
+
+.app_body {
+  @include absolute-fullscreen();
+  background: $background-color;
+  font-family: 'Open Sans', sans-serif;
+  color: $primary-color;
+  overflow: hidden;
+
+  input {
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
+.container {
+  width: $default-width;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+
+  @media screen and (max-width: $layout-lg-tablet) {
+    width: $xs-width;
+  }
+}
+
+.main_body {
+  margin: 0 0.5em;
+}
+
+.task_container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.bounce_zoomin_in_logo {
+  animation: bounce_zoom_in 4000ms linear both;
+}
