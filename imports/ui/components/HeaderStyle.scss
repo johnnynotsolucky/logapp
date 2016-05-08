@@ -1,0 +1,46 @@
+@import '{}/imports/ui/stylesheets/base';
+
+header.page_header {
+  margin: 0.5em;
+  display: flex;
+  flex-direction: row;
+
+  .page_menu {
+    cursor: pointer;
+    padding: 0 $base-size;
+    transition: background 0.2s;
+    
+    &:first-child {
+      padding-left: 0;
+      padding-right: $base-size;
+    }
+    
+    &:last-child {
+      padding-left: $base-size;
+      padding-right: 0;
+    }
+    
+    &:hover {
+      background: darken($background-color, 5%);
+    }
+
+    i {
+      line-height: $base-size * 3;
+    }
+  }
+
+  .header_title {
+    margin-left: $base-size * 0.25;
+    display: inline-block;
+    line-height: $base-size * 3;
+    font-size: $large-font-size;
+    flex: 1;
+  }
+  
+  .toggle_nav_drawer {
+    display: none;
+    @media screen and (max-width: $layout-sm-tablet) {
+      display: block; 
+    }
+  }
+}

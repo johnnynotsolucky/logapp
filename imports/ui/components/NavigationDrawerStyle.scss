@@ -1,0 +1,45 @@
+@import '{}/imports/ui/stylesheets/base';
+
+.nav_drawer {
+  width: 240px;
+  padding: $base-size * 0.5;
+  top:0;
+  height: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  background: $background-color;
+  z-index: 300;
+  
+  @media screen and (max-width: $layout-sm-tablet) {
+    transition: transform .3s ease-out;
+    transform: translate3d(-240px,0,0);
+    &.nav_drawer_open {
+      transform: translate3d(0,0,0);
+      box-shadow: 0 0 1px 1px rgba($primary-color, 1);
+    }
+  }
+  
+  .app_title {
+    line-height: $base-size * 3;
+    font-size: $large-font-size;
+  }
+}
+
+.nav_screen {
+  z-index:299;
+  
+  background: rgba(66, 66, 66, 0.75);
+  @include fixed-fullscreen();
+  
+  visibility: hidden;
+  opacity: 0;
+  
+  transition: opacity .3s ease-out, visibility .3s ease-out;
+  
+  @media screen and (max-width: $layout-sm-tablet) {
+    &.nav_drawer_open {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
