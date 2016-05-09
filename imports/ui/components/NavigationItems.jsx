@@ -15,7 +15,8 @@ export default class NavigationItems extends React.Component {
     return (
       <div className={style.nav_items}>
         <NavigationItem title='Username' icon='arrow_drop_down' />
-        <NavigationItem title='Dashboard' icon='show_chart' />
+        <NavigationItem title='Dashboard' icon='assessment' />
+        <NavigationItem title='Projects' icon='assignment' />
         <NavigationItem title='Invoices' icon='payment' />
         <NavigationItem empty={true} />
         <NavigationItem title='Settings' icon='settings' />
