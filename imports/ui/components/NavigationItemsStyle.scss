@@ -4,4 +4,8 @@
   @extend .flex_column;
   height: 100%;
   background: darken($background-color, 10%);
+  
+  &.secondary {
+    background: $background-color;
+  }
 }

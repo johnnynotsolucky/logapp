@@ -9,6 +9,7 @@
   box-sizing: border-box;
   background: $background-color;
   z-index: 300;
+  overflow-y: auto;
   
   @media screen and (max-width: $layout-sm-tablet) {
     transition: transform .3s ease-out;

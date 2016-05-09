@@ -21,6 +21,24 @@ a.item {
   &:hover {
     background: darken($primary-color, 5%);
   }
+  
+  &.secondary {
+    color: $primary-color;
+    background: $background-color;
+    
+    &:hover {
+      background: darken($background-color, 5%);
+    }
+  }
+}
+
+.sub_items {
+  max-height: 0;
+  transition: max-height 0.7s ease-in-out;
+  
+  &.open {
+    max-height: 1280px; /*Haxx*/
+  }
 }
 
 .empty_item { 

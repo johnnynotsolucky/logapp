@@ -1,6 +1,8 @@
 import { Meteor } from 'meteor/meteor';
 import React from 'react';
 
+import classnames from 'classnames';
+
 import NavigationItem from './NavigationItem';
 
 import style from './NavigationItemsStyle';
@@ -12,21 +14,18 @@ export default class NavigationItems extends React.Component {
   
   render() {
     
+    const navItemsClass = classnames(style.nav_items, { [`${style.secondary}`]: !!this.props.secondary });
+    
     return (
-      <div className={style.nav_items}>
-        <NavigationItem title='Username' icon='arrow_drop_down' />
-        <NavigationItem title='Dashboard' icon='assessment' />
-        <NavigationItem title='Projects' icon='assignment' />
-        <NavigationItem title='Invoices' icon='payment' />
-        <NavigationItem empty={true} />
-        <NavigationItem title='Settings' icon='settings' />
+      <div className={navItemsClass}>
+        {this.props.children}
       </div>
     );
   }
 }
 
 NavigationItems.propTypes = {
-  
+  secondary: React.PropTypes.bool,
 };
 
 NavigationItems.contextTypes = {
