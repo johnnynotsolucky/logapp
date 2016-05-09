@@ -1,0 +1,7 @@
+@import '{}/imports/ui/stylesheets/base';
+
+.nav_items {
+  @extend .flex_column;
+  height: 100%;
+  background: darken($background-color, 10%);
+}

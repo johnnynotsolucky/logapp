@@ -3,6 +3,8 @@ import React from 'react';
 
 import classnames from 'classnames';
 
+import NavigationItems from './NavigationItems';
+
 import style from './NavigationDrawerStyle';
 
 export default class NavigationDrawer extends React.Component {
@@ -26,25 +28,7 @@ export default class NavigationDrawer extends React.Component {
               <i className="material-icons" onClick={this.props.toggleNavDrawer}>close</i>
             </a>
           </div>
-          <div className={style.nav_items}>
-            <a>
-              <span>Username</span>
-              <i className="material-icons">arrow_drop_down</i>
-            </a>
-            <a>
-              <span>Dashboard</span>
-              <i className="material-icons">show_chart</i>
-            </a>
-            <a>
-              <span>Invoices</span>
-              <i className="material-icons">payment</i>
-            </a>
-            <div className={style.empty_item}></div>
-            <a>
-              <span>Settings</span>
-              <i className="material-icons">settings</i>
-            </a>
-          </div>
+          <NavigationItems />
         </div>
       </div>
     );

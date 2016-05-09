@@ -42,39 +42,6 @@
       }
     }
   }
-  
-  .nav_items {
-    @extend .flex_column;
-    height: 100%;
-    background: darken($background-color, 10%);
-    
-    a {
-      @extend .flex_row;
-      background: $primary-color;
-      color: $background-color;
-      cursor: pointer;
-      padding: 0 $base-size * 0.5;
-      border-bottom: darken($background-color, 25%) solid $base-size * 0.1;
-      font-size: $large-font-size * 0.8;
-      transition: background 0.3s ease-out;
-      
-      > * {
-        line-height: $base-size * 3;
-      }
-      
-      & :first-child {
-        flex: 1;
-      }
-      
-      &:hover {
-        background: darken($primary-color, 5%);
-      }
-    }
-    
-    .empty_item { 
-      flex: 1;
-    }
-  }
 }
 
 .nav_screen {
