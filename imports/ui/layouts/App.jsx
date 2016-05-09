@@ -1,6 +1,4 @@
-import { Meteor } from 'meteor/meteor';
 import React from 'react';
-import { Session } from 'meteor/session';
 
 import classnames from 'classnames';
 

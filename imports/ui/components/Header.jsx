@@ -1,4 +1,3 @@
-import { Meteor } from 'meteor/meteor';
 import React from 'react';
 
 import classnames from 'classnames';
@@ -17,10 +16,7 @@ export default class Header extends React.Component {
         <a className={classnames(style.page_menu, style.toggle_nav_drawer)} onClick={this.props.toggleNavDrawer}>
           <i className="material-icons">menu</i>
         </a>
-        <div className={style.header_title}></div>
-        <a className={style.page_menu}>
-          <i className="material-icons">more_horiz</i>
-        </a>
+        <div className={style.header_title}>&nbsp;</div>
       </header>
     );
   }
