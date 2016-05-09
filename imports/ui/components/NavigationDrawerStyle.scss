@@ -1,8 +1,8 @@
 @import '{}/imports/ui/stylesheets/base';
 
 .nav_drawer {
+  @extend .flex_column;
   width: 240px;
-  padding: $base-size * 0.5;
   top:0;
   height: 100%;
   position: fixed;
@@ -20,8 +20,60 @@
   }
   
   .app_title {
-    line-height: $base-size * 3;
-    font-size: $large-font-size;
+    @extend .flex_row;
+    
+    h1 {
+      flex: 1;
+      line-height: $base-size * 3;
+      font-size: $large-font-size;
+      padding: 0 $base-size * 0.5;
+    }
+    
+    a.toggle_nav_drawer {
+      display: none;
+      cursor: pointer;
+      padding: 0 $base-size * 0.5;
+      @media screen and (max-width: $layout-sm-tablet) {
+        display: block; 
+      }
+      
+      i {
+        line-height: $base-size * 3;
+      }
+    }
+  }
+  
+  .nav_items {
+    @extend .flex_column;
+    height: 100%;
+    background: darken($background-color, 10%);
+    
+    a {
+      @extend .flex_row;
+      background: $primary-color;
+      color: $background-color;
+      cursor: pointer;
+      padding: 0 $base-size * 0.5;
+      border-bottom: darken($background-color, 25%) solid $base-size * 0.1;
+      font-size: $large-font-size * 0.8;
+      transition: background 0.3s ease-out;
+      
+      > * {
+        line-height: $base-size * 3;
+      }
+      
+      & :first-child {
+        flex: 1;
+      }
+      
+      &:hover {
+        background: darken($primary-color, 5%);
+      }
+    }
+    
+    .empty_item { 
+      flex: 1;
+    }
   }
 }
 
