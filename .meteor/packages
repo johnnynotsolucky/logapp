@@ -20,3 +20,4 @@ seba:minifiers-autoprefixer
 less
 nathantreid:css-modules
 session
+react-meteor-data

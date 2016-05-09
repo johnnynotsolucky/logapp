@@ -1,15 +1,15 @@
+import { Meteor} from 'meteor/meteor';
 import React from 'react';
+import { createContainer } from 'meteor/react-meteor-data';
 
 import classnames from 'classnames';
 
-import NavigationDrawer from '../components/NavigationDrawer';
+import NavigationDrawer from '../components/navigation/NavigationDrawer';
 import Header from '../components/Header';
-import NewTask from '../components/NewTask';
-import TaskList from '../components/TaskList';
 
 import style from './AppStyle';
 
-export default class App extends React.Component {
+class App extends React.Component {
   constructor(props) {
     super(props);
     
@@ -34,10 +34,7 @@ export default class App extends React.Component {
           <NavigationDrawer toggleNavDrawer={this.toggleNavDrawer} open={this.state.navDrawerOpen} />
           <div className={style.page}>
             <Header toggleNavDrawer={this.toggleNavDrawer} />
-            <div className={style.content}>
-              <NewTask />
-              <TaskList />
-            </div>
+            { this.props.children }
           </div>
         </div>
         </div>
@@ -53,3 +50,9 @@ App.propTypes = {
 App.contextTypes = {
   router: React.PropTypes.object,
 };
+
+export default createContainer(() => {
+  return {
+    connected: Meteor.status().connected,
+  };
+}, App);

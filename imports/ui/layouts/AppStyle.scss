@@ -36,11 +36,11 @@
   flex: 1;
   margin-left: $nav-drawer-width;
   
+  > div {
+    margin: 0 0.5em;
+  }
+  
   @media screen and (max-width: $layout-sm-tablet) {
     margin-left: 0;
   }
-}
-
-.content {
-  margin: 0 0.5em;
 }
