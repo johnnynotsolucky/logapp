@@ -9,6 +9,7 @@ a.item {
   border-bottom: darken($background-color, 25%) solid $base-size * 0.1;
   font-size: $large-font-size * 0.8;
   transition: background 0.3s ease-out;
+  text-decoration: none !important;
   
   > * {
     line-height: $base-size * 3;

@@ -31,15 +31,15 @@ export default class NavigationDrawer extends React.Component {
           <NavigationItems>
             <NavigationItem title='Username' icon='arrow_drop_down'>
               <NavigationItems secondary={true}>
-                <NavigationItem title='Account' icon='account_circle' secondary={true} />
-                <NavigationItem title='Sign Out' icon='lock' secondary={true} />
+                <NavigationItem title='Account' icon='account_circle' secondary={true}  to='/account'/>
+                <NavigationItem title='Sign Out' icon='lock' secondary={true} to='/signout' />
               </NavigationItems>
             </NavigationItem>
-            <NavigationItem title='Dashboard' icon='assessment' />
-            <NavigationItem title='Projects' icon='assignment' />
-            <NavigationItem title='Invoices' icon='payment' />
+            <NavigationItem title='Dashboard' icon='assessment' to='/dashboard' />
+            <NavigationItem title='Projects' icon='assignment' to='/projects' />
+            <NavigationItem title='Invoices' icon='payment' to='/invoices' />
             <NavigationItem empty={true} />
-            <NavigationItem title='Settings' icon='settings' />
+            <NavigationItem title='Settings' icon='settings' to='/settings' />
           </NavigationItems>
         </div>
       </div>

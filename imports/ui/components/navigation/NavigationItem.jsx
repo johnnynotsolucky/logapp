@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 import classnames from 'classnames';
 
@@ -27,21 +28,39 @@ export default class NavigationItem extends React.Component {
   
   renderNavigationItem() {
     const { children } = this.props;
+    
+    return (
+      <div>
+        { !!children ? this.renderItemWithSubItems() : this.renderItem() }
+      </div>
+    );
+  }
+  
+  renderItemWithSubItems() {
     const itemClass = classnames(style.item, { [`${style.secondary}`]: !!this.props.secondary });
     const subItemsClass = classnames(style.sub_items, { [`${style.open}`]: !!this.state.subItemsOpen});
     
-    return (
+    return  (
       <div>
         <a className={itemClass} onClick={this.toggleSubItems}>
           <span>{this.props.title}</span>
           <i className="material-icons">{this.props.icon}</i>
         </a>
-        { !!children ? 
         <div className={subItemsClass}>
-          {children}
+          {this.props.children}
         </div>
-        : null }
       </div>
+    );
+  }
+  
+  renderItem() {
+    console.log(this.props.to);
+    const itemClass = classnames(style.item, { [`${style.secondary}`]: !!this.props.secondary });
+    return (
+      <Link className={itemClass} onClick={this.toggleSubItems} to={this.props.to}>
+        <span>{this.props.title}</span>
+        <i className="material-icons">{this.props.icon}</i>
+      </Link>
     );
   }
   
@@ -56,6 +75,7 @@ NavigationItem.propTypes = {
   empty: React.PropTypes.bool,
   title: React.PropTypes.string,
   icon: React.PropTypes.string,
+  to: React.PropTypes.string,
   secondary: React.PropTypes.bool,
 };
 
