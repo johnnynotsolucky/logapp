@@ -2,10 +2,6 @@ import React from 'react';
 
 import classnames from 'classnames';
 
-import NavigationItem from './NavigationItem';
-
-import style from './NavigationItemsStyle';
-
 export default class NavigationItems extends React.Component {
   constructor(props) {
     super(props);
@@ -13,7 +9,7 @@ export default class NavigationItems extends React.Component {
   
   render() {
     
-    const navItemsClass = classnames(style.nav_items, { [`${style.secondary}`]: !!this.props.secondary });
+    const navItemsClass = classnames('nav_items', {'secondary': !!this.props.secondary });
     
     return (
       <div className={navItemsClass}>

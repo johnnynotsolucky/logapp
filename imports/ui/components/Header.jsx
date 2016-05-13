@@ -2,8 +2,6 @@ import React from 'react';
 
 import classnames from 'classnames';
 
-import style from './HeaderStyle';
-
 export default class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -12,11 +10,11 @@ export default class Header extends React.Component {
   render() {
 
     return (
-      <header className={style.page_header}>
-        <a className={classnames(style.page_menu, style.toggle_nav_drawer)} onClick={this.props.toggleNavDrawer}>
+      <header className='app_header'>
+        <a className={classnames('app_menu', 'toggle_nav_drawer')} onClick={this.props.toggleNavDrawer}>
           <i className="material-icons">menu</i>
         </a>
-        <div className={style.header_title}>&nbsp;</div>
+        <div className='header_title'>&nbsp;</div>
       </header>
     );
   }

@@ -3,8 +3,6 @@ import { Link } from 'react-router';
 
 import classnames from 'classnames';
 
-import style from './NavigationItemStyle';
-
 export default class NavigationItem extends React.Component {
   constructor(props) {
     super(props);
@@ -37,14 +35,14 @@ export default class NavigationItem extends React.Component {
   }
   
   renderItemWithSubItems() {
-    const itemClass = classnames(style.item, { [`${style.secondary}`]: !!this.props.secondary });
-    const subItemsClass = classnames(style.sub_items, { [`${style.open}`]: !!this.state.subItemsOpen});
+    const itemClass = classnames('nav_item', { 'secondary': !!this.props.secondary });
+    const subItemsClass = classnames('sub_nav_items', {'open': !!this.state.subItemsOpen});
     
     return  (
       <div>
         <a className={itemClass} onClick={this.toggleSubItems}>
           <span>{this.props.title}</span>
-          <i className="material-icons">{this.props.icon}</i>
+          <i className='material-icons'>{this.props.icon}</i>
         </a>
         <div className={subItemsClass}>
           {this.props.children}
@@ -54,19 +52,18 @@ export default class NavigationItem extends React.Component {
   }
   
   renderItem() {
-    console.log(this.props.to);
-    const itemClass = classnames(style.item, { [`${style.secondary}`]: !!this.props.secondary });
+    const itemClass = classnames('nav_item', { 'secondary': !!this.props.secondary });
     return (
       <Link className={itemClass} onClick={this.toggleSubItems} to={this.props.to}>
         <span>{this.props.title}</span>
-        <i className="material-icons">{this.props.icon}</i>
+        <i className='material-icons'>{this.props.icon}</i>
       </Link>
     );
   }
   
   renderEmptyItem() {
     return (
-      <div className={style.empty_item}></div>
+      <div className='empty_nav_item'></div>
     );
   }
 }
