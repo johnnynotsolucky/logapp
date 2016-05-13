@@ -10,11 +10,9 @@ standard-minifier-js
 es5-shim
 ecmascript
 
-seba:minifiers-autoprefixer
-less
-nathantreid:css-modules
 session
 react-meteor-data
 accounts-password
 practicalmeteor:mocha
 dispatch:mocha-phantomjs
+juliancwirko:postcss

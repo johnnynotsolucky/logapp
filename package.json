@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
+    "test" "meteor test --once --driver-package dispatch:mocha-phantomjs --port $PORT",
     "test-watch": "meteor test --driver-package practicalmeteor:mocha --port $PORT"
   },
   "dependencies": {
@@ -12,22 +13,24 @@
     "react-addons-create-fragment": "^15.0.1",
     "react-addons-pure-render-mixin": "^15.0.2",
     "react-dom": "^15.0.2",
-    "react-router": "^2.4.0",
-    "velocity-animate": "^1.2.3"
+    "react-router": "^2.4.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
+    "postcss-cssnext": "^2.5.2",
+    "postcss-easy-import": "^1.0.1",
+    "postcss-mixins": "^4.0.1",
     "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
+    "rucksack-css": "^0.8.6",
     "sinon": "^1.17.4"
   },
-  "cssModules": {
-    "extensions": [
-      "scss"
-    ],
-    "outputJsFilePath": {
-      ".*node_modules/.*": "{dirname}/{basename}.js"
+  "postcss": {
+    "plugins": {
+      "postcss-easy-import": {},
+      "postcss-cssnext": {},
+      "rucksack-css": {}
     }
   }
 }

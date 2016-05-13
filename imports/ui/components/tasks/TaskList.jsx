@@ -2,8 +2,6 @@ import React from 'react';
 
 import Task from './Task'
 
-import style from './TaskListStyle';
-
 export default class TaskList extends React.Component {
   constructor(props) {
     super(props);
@@ -12,13 +10,13 @@ export default class TaskList extends React.Component {
   render() {
 
     return (
-      <section className={style.task_list}>
-        <ul className={style.filter}>
+      <section className='task_list_container'>
+        <ul className='task_filter'>
           <li></li>
-          <li className={style.current}><a>Today</a></li>
+          <li className='current'><a>Today</a></li>
           <li><a>Previous</a></li>
         </ul>
-        <ul className={style.tasks}>
+        <ul className='task_list'>
           <li>
             <Task />
           </li>
