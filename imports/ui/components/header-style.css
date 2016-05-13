@@ -3,7 +3,7 @@ header.app_header {
   display: flex;
   flex-direction: row;
 
-  & .app_menu {
+  & .app_menu_item {
     cursor: pointer;
     padding: 0 var(--base-size);
     transition: background 0.2s;

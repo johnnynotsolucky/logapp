@@ -11,7 +11,7 @@ export default class Header extends React.Component {
 
     return (
       <header className='app_header'>
-        <a className={classnames('app_menu', 'toggle_nav_drawer')} onClick={this.props.toggleNavDrawer}>
+        <a className={classnames('app_menu_item', 'toggle_nav_drawer', {'nav_drawer_open': this.props.navDrawerOpen})} onClick={this.props.toggleNavDrawer}>
           <i className="material-icons">menu</i>
         </a>
         <div className='header_title'>&nbsp;</div>
@@ -21,6 +21,7 @@ export default class Header extends React.Component {
 }
 
 Header.propTypes = {
+  navDrawerOpen: React.PropTypes.bool.isRequired,
   toggleNavDrawer: React.PropTypes.func.isRequired,
 };
 

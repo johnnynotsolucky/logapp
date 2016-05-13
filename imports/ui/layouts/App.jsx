@@ -28,7 +28,7 @@ class App extends React.Component {
         <div className='container'>
           <NavigationDrawer toggleNavDrawer={this.toggleNavDrawer} open={this.state.navDrawerOpen} />
           <div className='page'>
-            <Header toggleNavDrawer={this.toggleNavDrawer} />
+            <Header toggleNavDrawer={this.toggleNavDrawer} navDrawerOpen={false} />
             { this.props.children }
           </div>
         </div>
