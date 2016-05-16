@@ -8,5 +8,6 @@ install:
   - "meteor npm install"
   - "npm install -g stylelint"
 script:
-  - "npm run lint"
+  - "npm run \"lint:js\""
+  - "stylelint \"./**/*.css\""
   - "npm test"
