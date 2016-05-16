@@ -5,7 +5,7 @@
     "start": "meteor run",
     "lint": "npm run \"lint:js\" && npm run \"lint:css\" || true",
     "lint:js": "eslint --ext js,jsx .",
-    "lint:css": "stylelint */**/*.css",
+    "lint:css": "stylelint \"client/**/*.css\" \"imports/**/*.css\"",
     "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
     "test-watch": "meteor test --driver-package practicalmeteor:mocha --port $PORT"
   },
@@ -33,6 +33,7 @@
     "react-addons-test-utils": "^15.0.2",
     "rucksack-css": "^0.8.6",
     "sinon": "^1.17.4",
+    "stylelint": "^6.3.3",
     "stylelint-config-standard": "^7.0.0"
   },
   "eslintConfig": {
@@ -57,9 +58,9 @@
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
-    "ignoreFiles": [ 
-      "node_modules/**/*.css", 
-      "imports/ui/stylesheets/reset.css", 
+    "ignoreFiles": [
+      "node_modules/**/*.css",
+      "imports/ui/stylesheets/reset.css",
       "node_modules/postcss-easy-import/node_modules/postcss-import/node_modules/pkg-resolve/node_modules/jspm/node_modules/systemjs-builder/node_modules/babel-core/node_modules/convert-source-map/test/fixtures/map-file-comment-double-slash.css"
     ]
   }
