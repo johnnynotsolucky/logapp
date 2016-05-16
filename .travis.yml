@@ -6,4 +6,5 @@ before_install:
   - "curl https://install.meteor.com | /bin/sh"
   - "meteor npm install"
 script:
+  - "nmp run lint"
   - "npm test"
