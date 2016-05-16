@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "lint": "npm run \"lint:js\" && npm run \"lint:css\" || true",
+    "lint": "npm run \"lint:js\" && npm run \"lint:css\"",
     "lint:js": "eslint --ext js,jsx .",
     "lint:css": "stylelint \"client/**/*.css\" \"imports/**/*.css\"",
     "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
@@ -60,8 +60,7 @@
     "extends": "stylelint-config-standard",
     "ignoreFiles": [
       "node_modules/**/*.css",
-      "imports/ui/stylesheets/reset.css",
-      "node_modules/postcss-easy-import/node_modules/postcss-import/node_modules/pkg-resolve/node_modules/jspm/node_modules/systemjs-builder/node_modules/babel-core/node_modules/convert-source-map/test/fixtures/map-file-comment-double-slash.css"
+      "imports/ui/stylesheets/reset.css"
     ]
   }
 }
