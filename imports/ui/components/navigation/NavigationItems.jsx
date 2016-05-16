@@ -14,7 +14,7 @@ const NavigationItems = (props) => {
 
 NavigationItems.propTypes = {
   secondary: React.PropTypes.bool,
-  children: React.PropTypes.object,
+  children: React.PropTypes.array,
 };
 
 NavigationItems.contextTypes = {
