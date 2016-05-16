@@ -50,7 +50,7 @@ export default class NavigationItem extends React.Component {
   renderItem() {
     const itemClass = classnames('nav_item', { secondary: !!this.props.secondary });
     return (
-      <Link className={itemClass} onClick={this.toggleSubItems} to={this.props.to}>
+      <Link className={itemClass} to={this.props.to}>
         <span>{this.props.title}</span>
         <i className="material-icons">{this.props.icon}</i>
       </Link>

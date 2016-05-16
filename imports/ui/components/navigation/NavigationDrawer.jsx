@@ -17,8 +17,8 @@ const NavigationDrawer = (props) => {
           <h1>
             LogApp
           </h1>
-          <a className="close_nav_drawer">
-            <i className="material-icons" onClick={props.toggleNavDrawer}>close</i>
+          <a className="close_nav_drawer" onClick={props.toggleNavDrawer}>
+            <i className="material-icons">close</i>
           </a>
         </div>
         <NavigationItems>
@@ -42,10 +42,6 @@ const NavigationDrawer = (props) => {
 NavigationDrawer.propTypes = {
   open: React.PropTypes.bool,
   toggleNavDrawer: React.PropTypes.func.isRequired,
-};
-
-NavigationDrawer.contextTypes = {
-  router: React.PropTypes.object,
 };
 
 export default NavigationDrawer;
