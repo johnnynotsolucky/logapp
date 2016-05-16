@@ -56,6 +56,7 @@
     }
   },
   "stylelint": {
-    "extends": "stylelint-config-standard"
+    "extends": "stylelint-config-standard",
+    "ignoreFiles": [ "node_modules/**/*.css", "imports/ui/stylesheets/reset.css" ]
   }
 }
