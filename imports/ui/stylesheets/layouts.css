@@ -10,5 +10,5 @@
   --layout-xxxl: 1920px !default;
 }
 
-@custom-media --sm-tablet screen and (width <= 720px);
-@custom-media --lg-tablet screen and (width <= 1024px);
+@custom-media --sm-tablet (width <= 720px);
+@custom-media --lg-tablet (width <= 1024px);

@@ -9,24 +9,24 @@ a.nav_item {
   font-size: calc(var(--large-font-size) * 0.8);
   transition: background 0.3s ease-out;
   text-decoration: none !important;
-  
+
   &:hover {
     background: color(var(--primary-color) lightness(-5%));
   }
-  
+
   &.secondary {
     color: var(--primary-color);
     background: var(--background-color);
-    
+
     &:hover {
       background: color(var(--background-color) lightness(-5%));
     }
   }
-  
+
   & > * {
     line-height: calc(var(--base-size) * 3);
   }
-  
+
   & :first-child {
     flex: 1;
   }
@@ -35,12 +35,12 @@ a.nav_item {
 .sub_nav_items {
   max-height: 0;
   transition: max-height 0.7s ease-in-out;
-  
+
   &.open {
-    max-height: 1280px; /*Haxx*/
+    max-height: 1280px; /* Haxx */
   }
 }
 
-.empty_nav_item { 
+.empty_nav_item {
   flex: 1;
 }

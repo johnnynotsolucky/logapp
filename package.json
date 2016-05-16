@@ -3,7 +3,10 @@
   "private": true,
   "scripts": {
     "start": "meteor run",
-    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs --port $PORT",
+    "lint": "npm run \"lint:js\" && npm run \"lint:css\"",
+    "lint:js": "eslint --ext js,jsx .",
+    "lint:css": "stylelint \"client/**/*.css\" \"imports/**/*.css\"",
+    "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
     "test-watch": "meteor test --driver-package practicalmeteor:mocha --port $PORT"
   },
   "dependencies": {
@@ -18,13 +21,32 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "enzyme": "^2.3.0",
+    "eslint": "^2.10.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.8.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.1.1",
     "postcss-cssnext": "^2.5.2",
     "postcss-easy-import": "^1.0.1",
     "postcss-mixins": "^4.0.1",
-    "react": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
     "rucksack-css": "^0.8.6",
-    "sinon": "^1.17.4"
+    "sinon": "^1.17.4",
+    "stylelint": "^6.3.3",
+    "stylelint-config-standard": "^7.0.0"
+  },
+  "eslintConfig": {
+    "extends": "airbnb",
+    "rules": {
+      "import/no-unresolved": [
+        2,
+        {
+          "ignore": [
+            "^meteor/"
+          ]
+        }
+      ]
+    }
   },
   "postcss": {
     "plugins": {
@@ -32,5 +54,12 @@
       "postcss-cssnext": {},
       "rucksack-css": {}
     }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "ignoreFiles": [
+      "node_modules/**/*.css",
+      "imports/ui/stylesheets/reset.css"
+    ]
   }
 }

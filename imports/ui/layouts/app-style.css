@@ -13,7 +13,7 @@
   & input {
     font-family: 'Open Sans', sans-serif;
   }
-  
+
   & > div {
     background: var(--background-color);
     width: 100%;
@@ -23,7 +23,7 @@
 
 .container {
   width: var(--default-width);
-  max-width:840px;
+  max-width: 840px;
   margin: auto;
   position: absolute;
   left: 0;
@@ -38,12 +38,13 @@
 .page {
   flex: 1;
   margin-left: var(--nav-drawer-width);
-  
+
   & > div {
     margin: 0 0.5em;
   }
-  
+
   @media (--sm-tablet) {
+
     margin-left: 0;
   }
 }

@@ -3,16 +3,16 @@ header.app_header {
   display: flex;
   flex-direction: row;
 
-  & .app_menu {
+  & .app_menu_item {
     cursor: pointer;
     padding: 0 var(--base-size);
     transition: background 0.2s;
-    
+
     &:first-child {
       padding-left: 0;
       padding-right: var(--base-size);
     }
-    
+
     &:last-child {
       padding-left: var(--base-size);
       padding-right: 0;
@@ -30,12 +30,13 @@ header.app_header {
     font-size: var(--large-font-size);
     flex: 1;
   }
-  
+
   & .toggle_nav_drawer {
     display: none;
-    
+
     @media (--sm-tablet) {
-      display: block; 
+      display: block;
+
     }
   }
 }
