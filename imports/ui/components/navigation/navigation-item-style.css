@@ -5,7 +5,7 @@ a.nav_item {
   color: var(--background-color);
   cursor: pointer;
   padding: 0 calc(var(--base-size) * 0.5);
-  border-bottom: darken(var(--background-color), 25%) solid calc(var(--base-size) * 0.1);
+  border-bottom: color(var(--background-color) lightness(-25%)) solid calc(var(--base-size) * 0.1);
   font-size: calc(var(--large-font-size) * 0.8);
   transition: background 0.3s ease-out;
   text-decoration: none !important;
