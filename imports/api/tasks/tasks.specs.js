@@ -15,20 +15,20 @@ describe('api/Tasks', () => {
   const userId = Random.id();
 
   before(() => {
-    if (Meteor.isServer)
-      require("./server/publications.js");
+    if (Meteor.isServer) {
+      require('./server/publications'); // eslint-disable-line global-require
+    }
 
-    Factory.define('task', Tasks, { 
+    Factory.define('task', Tasks, {
       description: () => faker.lorem.sentence(),
       startedAt: () => new Date(),
     });
   });
 
   describe('mutators', () => {
-    
     if (Meteor.isServer) {
       before(() => resetDatabase());
-    
+
       it('prevents insert with missing mandatory fields', (done) => {
         Tasks.insert({}, (error) => {
           assert.equal(!!error, true);
@@ -38,13 +38,14 @@ describe('api/Tasks', () => {
       });
 
       it('prevents update with missing mandatory fields', (done) => {
-        const task = Factory.create('task', { userId });
-        task.description = null;
-        task.startedAt = null;
-        task.completed = null;
-        task.userId = null;
+        const fields = {
+          description: null,
+          startedAt: null,
+          completed: null,
+          userId: null,
+        };
 
-        Tasks.update(task._id, { $set: task }, (error) => {
+        Tasks.update(Random.id(), { $set: fields }, (error) => {
           assert.equal(!!error, true);
           assert.equal(error.invalidKeys.length, 4);
           done();
@@ -60,7 +61,7 @@ describe('api/Tasks', () => {
         assert.notEqual(task.completed, undefined);
         assert.equal(!!task.userId, true);
       });
-      
+
       it('updates a task with required fields', (done) => {
         const task = Factory.create('task', { userId });
         task.description = faker.lorem.sentence();
@@ -81,15 +82,15 @@ describe('api/Tasks', () => {
         userId,
       };
 
-      it('denies client insert', function(done) {
+      it('denies client insert', (done) => {
         denyInsert(Tasks, fields, done);
       });
-      
-      it('denies client update', function(done) {
+
+      it('denies client update', (done) => {
         denyUpdate(Tasks, Random.id(), fields, done);
       });
-      
-      it('denies client remove', function(done) {
+
+      it('denies client remove', (done) => {
         denyRemove(Tasks, Random.id(), done);
       });
     }
@@ -98,7 +99,7 @@ describe('api/Tasks', () => {
   if (Meteor.isServer) {
     describe('publications', () => {
       before(() => resetDatabase());
-      
+
       describe('tasks.forUser', () => {
         before(() => {
           _.times(3, () => {
@@ -106,28 +107,28 @@ describe('api/Tasks', () => {
             Factory.create('task', { userId: Random.id() });
           });
         });
-  
+
         it('publishes all tasks for a user', () => {
           const data = Meteor.server
             .publish_handlers['tasks.forUser'](userId)
             .fetch();
-  
+
           assert.equal(data.length, 3);
         });
-  
+
         it('publishes no tasks for users with no assigned tasks', () => {
           const data = Meteor.server
             .publish_handlers['tasks.forUser'](Random.id())
             .fetch();
-  
+
           assert.equal(data.length, 0);
         });
-        
+
         it('publishes no tasks when no user ID is passed through', () => {
           const data = Meteor.server
             .publish_handlers['tasks.forUser']()
             .fetch();
-  
+
           assert.equal(data.length, 0);
         });
       });

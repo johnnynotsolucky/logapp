@@ -46,7 +46,8 @@
             "^meteor/"
           ]
         }
-      ]
+      ],
+      "no-underscore-dangle": 0
     }
   },
   "postcss": {

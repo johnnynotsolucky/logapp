@@ -4,9 +4,10 @@ const assertion = (error, result, callback) => {
   assert.equal(result, false);
   assert.equal(!!error, true);
   assert.equal(error.error, 403);
-  if(!!callback) 
+  if (!!callback) {
     callback();
-}
+  }
+};
 
 const denyInsert = (collection, fields, done) => {
   collection.insert(fields, (error, result) => {

@@ -1,7 +1,7 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-const Tasks = new Mongo.Collection("tasks");
+const Tasks = new Mongo.Collection('tasks');
 
 export { Tasks } ;
 
