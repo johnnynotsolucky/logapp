@@ -7,7 +7,7 @@
     "lint:js": "eslint --ext js,jsx .",
     "lint:css": "stylelint \"client/**/*.css\" \"imports/**/*.css\"",
     "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
-    "test:watch": "meteor test --driver-package practicalmeteor:mocha --port $PORT"
+    "test:watch": "meteor test --driver-package dispatch:mocha-browser --port $PORT"
   },
   "dependencies": {
     "classnames": "^2.2.5",
