@@ -13,6 +13,12 @@ ecmascript
 session
 react-meteor-data
 accounts-password
-practicalmeteor:mocha
 dispatch:mocha-phantomjs
 juliancwirko:postcss
+dburles:factory
+xolvio:cleaner
+random
+momentjs:moment
+dispatch:mocha-browser
+aldeed:simple-schema
+aldeed:collection2

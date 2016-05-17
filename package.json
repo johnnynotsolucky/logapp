@@ -7,7 +7,7 @@
     "lint:js": "eslint --ext js,jsx .",
     "lint:css": "stylelint \"client/**/*.css\" \"imports/**/*.css\"",
     "test": "meteor test --once --driver-package dispatch:mocha-phantomjs",
-    "test-watch": "meteor test --driver-package practicalmeteor:mocha --port $PORT"
+    "test:watch": "meteor test --driver-package dispatch:mocha-browser --port $PORT"
   },
   "dependencies": {
     "classnames": "^2.2.5",
@@ -26,6 +26,7 @@
     "eslint-plugin-import": "^1.8.0",
     "eslint-plugin-jsx-a11y": "^1.2.0",
     "eslint-plugin-react": "^5.1.1",
+    "faker": "^3.1.0",
     "postcss-cssnext": "^2.5.2",
     "postcss-easy-import": "^1.0.1",
     "postcss-mixins": "^4.0.1",
@@ -45,7 +46,8 @@
             "^meteor/"
           ]
         }
-      ]
+      ],
+      "no-underscore-dangle": 0
     }
   },
   "postcss": {
