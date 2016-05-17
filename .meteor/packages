@@ -20,3 +20,5 @@ xolvio:cleaner
 random
 momentjs:moment
 dispatch:mocha-browser
+aldeed:simple-schema
+aldeed:collection2
