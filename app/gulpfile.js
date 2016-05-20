@@ -43,7 +43,7 @@ gulp.task('browserify', ['browserify-vendor'], () =>
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('public/js')));
 
-gulp.task('css', () => {
+gulp.task('styles', () => {
   const processors = [
     easyImport(),
     cssnext(),
@@ -53,3 +53,5 @@ gulp.task('css', () => {
     .pipe(postcss(processors))
     .pipe(gulp.dest('./public/css'));
 });
+
+gulp.task('build', ['styles', 'browserify']);
