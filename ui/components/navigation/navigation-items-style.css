@@ -1,0 +1,9 @@
+.nav_items {
+  display: flex;
+  flex-direction: column;
+  background: color(var(--background-color) lightness(-10%));
+
+  &.secondary {
+    background: var(--background-color);
+  }
+}
