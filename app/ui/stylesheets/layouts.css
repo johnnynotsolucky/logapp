@@ -1,0 +1,14 @@
+:root {
+  --layout-xxs: 480px !default;
+  --layout-xs: 600px !default;
+  --layout-sm: 840px !default;
+  --layout-md: 960px !default;
+  --layout-lg-tablet: 1024px !default;
+  --layout-lg: 1280px !default;
+  --layout-xl: 1440px !default;
+  --layout-xxl: 1600px !default;
+  --layout-xxxl: 1920px !default;
+}
+
+@custom-media --sm-tablet (width <= 720px);
+@custom-media --lg-tablet (width <= 1024px);

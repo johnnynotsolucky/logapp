@@ -1,0 +1,50 @@
+.app_body {
+  position: absolute 0;
+  background: var(--background-color);
+  font-family: 'Open Sans', sans-serif;
+  color: var(--primary-color);
+  overflow: hidden;
+
+  &.container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  & input {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  & > div {
+    background: var(--background-color);
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.container {
+  width: var(--default-width);
+  max-width: 840px;
+  margin: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+
+  @media (--lg-tablet) {
+    width: var(--xs-width);
+  }
+}
+
+.page {
+  flex: 1;
+  margin-left: var(--nav-drawer-width);
+
+  & > div {
+    margin: 0 0.5em;
+  }
+
+  @media (--sm-tablet) {
+
+    margin-left: 0;
+  }
+}
