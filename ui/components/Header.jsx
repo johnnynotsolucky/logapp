@@ -14,7 +14,7 @@ const Header = (props) => {
       <a {...toggleNavDrawerProps}>
         <i className="material-icons">menu</i>
       </a>
-      <div className="header_title">&nbsp;</div>
+      <div className="header_title">[Project Title]</div>
     </header>
   );
 };

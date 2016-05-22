@@ -6,4 +6,7 @@ install:
   - "npm install"
   - "npm install -g eslint eslint-config-airbnb eslint-plugin-react eslint-plugin-import stylelint mocha"
 script:
-  - "./tests.sh"
+  - "./scripts/tests.sh"
+deploy:
+  provider: script
+  script: scripts/deploy.sh
