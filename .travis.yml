@@ -5,7 +5,7 @@ node_js:
 install:
   - "npm install"
   - "npm install -g eslint eslint-config-airbnb eslint-plugin-react eslint-plugin-import stylelint mocha"
-  - "pip install awscli"
+  - "sudo pip install awscli"
 script:
   - "./scripts/tests.sh"
 deploy:
