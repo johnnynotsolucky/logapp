@@ -83,7 +83,7 @@ var Header = function Header(props) {
     _react2.default.createElement(
       'div',
       { className: 'header_title' },
-      ' '
+      '[Project Title]'
     )
   );
 };

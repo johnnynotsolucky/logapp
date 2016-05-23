@@ -209,7 +209,7 @@ textarea {
   height: 100%;
   position: fixed;
   box-sizing: border-box;
-  background: #fafafa;
+  background: rgb(224, 224, 224);
   z-index: 300;
   overflow-y: auto
 }
