@@ -7,4 +7,4 @@ aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
 aws s3 sync build/assets/ s3://$AWS_S3_BUCKET --delete
 
 aws configure set preview.cloudfront true
-aws cloudfront create-invalidation --distribution-id $AWS_CF_DISTRIBUTION_ID --paths /rev-manifest.json
+aws cloudfront create-invalidation --distribution-id $AWS_CF_DISTRIBUTION_ID --paths /rev-manifest.json > /dev/null
