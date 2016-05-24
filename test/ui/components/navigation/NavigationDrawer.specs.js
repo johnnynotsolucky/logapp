@@ -5,7 +5,7 @@ import { assert } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import NavigationDrawer from './NavigationDrawer';
+import NavigationDrawer from '../../../../ui/components/navigation/NavigationDrawer';
 
 describe('components/navigation/<NavigationDrawer />', () => {
   const props = {

@@ -5,9 +5,9 @@
     "lint": "npm run \"lint:js\" && npm run \"lint:css\"",
     "lint:js": "eslint --ext js,jsx .",
     "lint:css": "stylelint \"ui/**/*.css\" \"main.css\"",
-    "test": "mocha ./**/*.specs.js --compilers js:babel-register",
-    "test:watch": "mocha -w ./**/*.specs.js --compilers js:babel-register",
-    "coverage": "istanbul cover _mocha --report lcovonly --  ./**/*.specs.js --compilers js:babel-register -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test": "mocha --compilers js:babel-register",
+    "test:watch": "mocha -w --compilers js:babel-register",
+    "coverage": "nyc --require babel-core/register mocha",
     "build": "gulp build"
   },
   "dependencies": {
@@ -42,8 +42,8 @@
     "gulp-rev": "^7.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
-    "istanbul": "^1.0.0-alpha.2",
     "mocha": "^2.5.2",
+    "nyc": "^6.4.4",
     "postcss-cssnext": "^2.5.2",
     "postcss-easy-import": "^1.0.1",
     "postcss-mixins": "^4.0.1",
@@ -76,5 +76,11 @@
       "ui/stylesheets/reset.css",
       "build/**/*.css"
     ]
+  },
+  "nyc": {
+    "extension": [
+      ".jsx"
+    ],
+    "report-dir": "./coverage"
   }
 }

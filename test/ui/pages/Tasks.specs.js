@@ -4,9 +4,9 @@ import React from 'react';
 import { assert } from 'chai';
 import { shallow } from 'enzyme';
 
-import Tasks from './Tasks';
-import NewTask from '../components/tasks/NewTask';
-import TaskList from '../components/tasks/TaskList';
+import Tasks from '../../../ui/pages/Tasks';
+import NewTask from '../../../ui/components/tasks/NewTask';
+import TaskList from '../../../ui/components/tasks/TaskList';
 
 describe('pages/<Tasks />', () => {
   const wrapper = shallow(<Tasks />);

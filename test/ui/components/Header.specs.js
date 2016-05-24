@@ -5,7 +5,7 @@ import { assert } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Header from './Header';
+import Header from '../../../ui/components/Header';
 
 describe('components/<Header />', () => {
   const props = {

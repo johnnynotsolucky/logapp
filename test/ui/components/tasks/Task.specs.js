@@ -4,7 +4,7 @@ import React from 'react';
 import { assert } from 'chai';
 import { shallow } from 'enzyme';
 
-import Task from './Task';
+import Task from '../../../../ui/components/tasks/Task';
 
 describe('components/tasks/<Task />', () => {
   const wrapper = shallow(<Task />);

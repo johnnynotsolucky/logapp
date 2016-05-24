@@ -4,10 +4,10 @@ import React from 'react';
 import { assert } from 'chai';
 import { shallow } from 'enzyme';
 
-import App from './App';
+import App from '../../../ui/layouts/App';
 
-import NavigationDrawer from '../components/navigation/NavigationDrawer';
-import Header from '../components/Header';
+import NavigationDrawer from '../../../ui/components/navigation/NavigationDrawer';
+import Header from '../../../ui/components/Header';
 
 describe('layouts/<App />', () => {
   const wrapper = shallow(<App />);
