@@ -73,7 +73,7 @@
     "ignoreFiles": [
       "node_modules/**/*.css",
       "ui/stylesheets/reset.css",
-      "public/**/*.css"
+      "build/**/*.css"
     ]
   }
 }

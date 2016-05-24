@@ -28,24 +28,16 @@ const staticAssets = [
   'index.html',
 ];
 
-const staticBowerDependencies = [
-  'bower_components/requirejs/require.js',
-];
-
 function buildDirs(base) {
   return {
-    assets: 'build/' + base,
-    js: 'build/' + base + '/js',
-    css: 'build/' + base + '/css',
+    assets: `build/${base}`,
+    js: `build/${base}/js`,
+    css: `build/${base}/css`,
   };
 }
 
 const tmpDirs = buildDirs('tmp');
 const finalDirs = buildDirs('assets');
-
-gulp.task('static-vendor', () => {
-  return gulp.src()
-});
 
 gulp.task('browserify-vendor', () =>
   browserify()
@@ -79,23 +71,19 @@ gulp.task('styles', () => {
     .pipe(gulp.dest(tmpDirs.css));
 });
 
-gulp.task('static', () => {
-  return gulp.src(staticAssets)
-    .pipe(gulp.dest(finalDirs.assets));
-});
+gulp.task('static', () =>
+  gulp.src(staticAssets)
+    .pipe(gulp.dest(finalDirs.assets)));
 
-gulp.task('build-static', [ 'styles', 'browserify', 'static' ]);
+gulp.task('build-static', ['styles', 'browserify', 'static']);
 
-gulp.task('rev', [ 'build-static' ], () => {
-  return gulp.src(tmpDirs.assets + '/**/*.*')
+gulp.task('rev', ['build-static'], () =>
+  gulp.src(`${tmpDirs.assets}/**/*.*`)
     .pipe(rev())
     .pipe(gulp.dest(finalDirs.assets))
     .pipe(rev.manifest())
-    .pipe(gulp.dest(finalDirs.assets));
-});
+    .pipe(gulp.dest(finalDirs.assets)));
 
-gulp.task('cleanup', () => {
-  return del('build');
-});
+gulp.task('cleanup', () => del('build'));
 
-gulp.task('build', [ 'rev' ]);
+gulp.task('build', ['rev']);
