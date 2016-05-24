@@ -4,7 +4,7 @@ import React from 'react';
 import { assert } from 'chai';
 import { shallow } from 'enzyme';
 
-import NavigationItems from '../../../../ui/components/navigation/NavigationItems';
+import NavigationItems from '../../../../app/components/navigation/NavigationItems';
 
 describe('components/navigation/<NavigationItems />', () => {
   it('renders a navigation items container', () => {

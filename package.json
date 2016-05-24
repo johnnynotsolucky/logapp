@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "npm run \"lint:js\" && npm run \"lint:css\"",
     "lint:js": "eslint --ext js,jsx .",
-    "lint:css": "stylelint \"ui/**/*.css\" \"main.css\"",
+    "lint:css": "stylelint \"app/**/*.css\" \"main.css\"",
     "test": "mocha --compilers js:babel-register",
     "test:watch": "mocha -w --compilers js:babel-register",
     "coverage": "nyc --require babel-core/register mocha",
@@ -73,7 +73,7 @@
     "extends": "stylelint-config-standard",
     "ignoreFiles": [
       "node_modules/**/*.css",
-      "ui/stylesheets/reset.css",
+      "app/stylesheets/reset.css",
       "build/**/*.css"
     ]
   },

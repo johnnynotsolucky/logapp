@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import App from '../../ui/layouts/App.jsx';
-import Tasks from '../../ui/pages/Tasks.jsx';
+import App from './layouts/App.jsx';
+import Tasks from './pages/Tasks.jsx';
 
 export const renderRoutes = () => (
   <Router history={browserHistory}>

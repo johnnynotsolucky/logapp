@@ -5,7 +5,7 @@ import { assert } from 'chai';
 import { shallow } from 'enzyme';
 
 import { Link } from 'react-router';
-import NavigationItem from '../../../../ui/components/navigation/NavigationItem';
+import NavigationItem from '../../../../app/components/navigation/NavigationItem';
 
 describe('components/navigation/<NavigationItem />', () => {
   it('renders a plain navigation item', () => {
