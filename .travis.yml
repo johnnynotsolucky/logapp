@@ -8,7 +8,7 @@ install:
 script:
   - "./scripts/tests.sh"
 after_success:
-  - "./node_modules/nyc/bin/nyc --require babel-core/register --reporter=text-lcov ./node_modules/mocha/bin/mocha | ./node_modules/coveralls/bin/coveralls"
+  - "./node_modules/.bin/nyc --require babel-core/register --reporter=text-lcov ./node_modules/.bin/mocha | ./node_modules/.bin/coveralls"
 deploy:
   provider: script
   script: scripts/deploy.sh
