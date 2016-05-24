@@ -10,6 +10,8 @@ const browserify = require('browserify');
 const uglify = require('gulp-uglify');
 const babelify = require('babelify');
 const sourcemaps = require('gulp-sourcemaps');
+const rev = require('gulp-rev');
+const del = require('del');
 
 const production = process.env.NODE_ENV === 'production';
 
@@ -22,26 +24,49 @@ const dependencies = [
   'underscore',
 ];
 
+const staticAssets = [
+  'index.html',
+];
+
+const staticBowerDependencies = [
+  'bower_components/requirejs/require.js',
+];
+
+function buildDirs(base) {
+  return {
+    assets: 'build/' + base,
+    js: 'build/' + base + '/js',
+    css: 'build/' + base + '/css',
+  };
+}
+
+const tmpDirs = buildDirs('tmp');
+const finalDirs = buildDirs('assets');
+
+gulp.task('static-vendor', () => {
+  return gulp.src()
+});
+
 gulp.task('browserify-vendor', () =>
   browserify()
     .require(dependencies)
     .bundle()
-    .pipe(source('vendor.bundle.js'))
+    .pipe(source('1-vendor.bundle.js'))
     .pipe(buffer())
     .pipe(gulpif(production, uglify({ mangle: false })))
-    .pipe(gulp.dest('./public/js')));
+    .pipe(gulp.dest(tmpDirs.js)));
 
 gulp.task('browserify', ['browserify-vendor'], () =>
-  browserify({ entries: './main.jsx', debug: true })
+  browserify({ entries: './index.jsx', debug: true })
     .external(dependencies)
     .transform(babelify, { presets: ['es2015', 'react'] })
     .bundle()
-    .pipe(source('bundle.js'))
+    .pipe(source('2-bundle.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(gulpif(production, uglify({ mangle: false })))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('public/js')));
+    .pipe(gulp.dest(tmpDirs.js)));
 
 gulp.task('styles', () => {
   const processors = [
@@ -51,7 +76,26 @@ gulp.task('styles', () => {
   ];
   return gulp.src('./main.css')
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./public/css'));
+    .pipe(gulp.dest(tmpDirs.css));
 });
 
-gulp.task('build', ['styles', 'browserify']);
+gulp.task('static', () => {
+  return gulp.src(staticAssets)
+    .pipe(gulp.dest(finalDirs.assets));
+});
+
+gulp.task('build-static', [ 'styles', 'browserify', 'static' ]);
+
+gulp.task('rev', [ 'build-static' ], () => {
+  return gulp.src(tmpDirs.assets + '/**/*.*')
+    .pipe(rev())
+    .pipe(gulp.dest(finalDirs.assets))
+    .pipe(rev.manifest())
+    .pipe(gulp.dest(finalDirs.assets));
+});
+
+gulp.task('cleanup', () => {
+  return del('build');
+});
+
+gulp.task('build', [ 'rev' ]);

@@ -7,6 +7,7 @@
     "lint:css": "stylelint \"ui/**/*.css\" \"main.css\"",
     "test": "mocha ./**/*.specs.js --compilers js:babel-register",
     "test:watch": "mocha -w ./**/*.specs.js --compilers js:babel-register",
+    "coverage": "istanbul cover _mocha --report lcovonly --  ./**/*.specs.js --compilers js:babel-register -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
     "build": "gulp build"
   },
   "dependencies": {
@@ -19,12 +20,15 @@
     "underscore": "^1.8.3"
   },
   "devDependencies": {
+    "babel-core": "^6.9.0",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.9.0",
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.9",
+    "del": "^2.2.0",
     "enzyme": "^2.3.0",
     "eslint": "^2.10.1",
     "eslint-config-airbnb": "^9.0.1",
@@ -35,8 +39,10 @@
     "gulp": "^3.9.1",
     "gulp-if": "^2.0.1",
     "gulp-postcss": "^6.1.1",
+    "gulp-rev": "^7.0.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
+    "istanbul": "^1.0.0-alpha.2",
     "postcss-cssnext": "^2.5.2",
     "postcss-easy-import": "^1.0.1",
     "postcss-mixins": "^4.0.1",
