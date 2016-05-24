@@ -23,6 +23,7 @@
   & .app_title {
     display: flex;
     flex-direction: row;
+    background: var(--background-color);
 
     & h1 {
       flex: 1;

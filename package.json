@@ -8,7 +8,7 @@
     "test": "mocha --compilers js:babel-register",
     "test:watch": "mocha -w --compilers js:babel-register",
     "coverage": "nyc --require babel-core/register mocha",
-    "build": "gulp build"
+    "build": "gulp cleanup && gulp build"
   },
   "dependencies": {
     "classnames": "^2.2.5",
