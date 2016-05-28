@@ -20,6 +20,7 @@ export default class Task extends React.Component {
   }
 
   render() {
+    const { task } = this.props;
     const { optionsOpen } = this.state;
     const optionsClass = classnames('task_options_menu', { hidden: !optionsOpen });
 
@@ -28,7 +29,7 @@ export default class Task extends React.Component {
         <div className="task_item">
           <div className="task_details">
             <div className="task_title">
-              Do some arb task
+              {task.details}
             </div>
             <div className="task_parameters">
               08/02/2016 06:45 - 08/02/2016 07:45

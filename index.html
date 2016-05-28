@@ -119,7 +119,6 @@
       
       function assetLoaded() {
         loadedAssets++;
-        console.log(loadedAssets, totalAssets);
         if(loadedAssets === totalAssets) {
           document.body.removeChild(document.getElementById('initial'));
         }
