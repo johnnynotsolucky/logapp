@@ -37,7 +37,7 @@ function buildDirs(base) {
 }
 
 const tmpDirs = buildDirs('tmp');
-const finalDirs = buildDirs('assets');
+const finalDirs = buildDirs('app');
 
 gulp.task('browserify-vendor', () =>
   browserify()
@@ -49,7 +49,7 @@ gulp.task('browserify-vendor', () =>
     .pipe(gulp.dest(tmpDirs.js)));
 
 gulp.task('browserify', ['browserify-vendor'], () =>
-  browserify({ entries: './index.jsx', debug: true })
+  browserify({ entries: './app/app.jsx', debug: true })
     .external(dependencies)
     .transform(babelify, { presets: ['es2015', 'react'] })
     .bundle()
@@ -66,7 +66,7 @@ gulp.task('styles', () => {
     cssnext(),
     rucksack(),
   ];
-  return gulp.src('./main.css')
+  return gulp.src('./app/app.css')
     .pipe(postcss(processors))
     .pipe(gulp.dest(tmpDirs.css));
 });
