@@ -10,15 +10,6 @@
     "coverage": "nyc --require babel-core/register mocha",
     "build": "gulp cleanup && gulp build"
   },
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "react": "^15.0.2",
-    "react-addons-create-fragment": "^15.0.1",
-    "react-addons-pure-render-mixin": "^15.0.2",
-    "react-dom": "^15.0.2",
-    "react-router": "^2.4.0",
-    "underscore": "^1.8.3"
-  },
   "devDependencies": {
     "alt": "^0.18.4",
     "babel-core": "^6.9.0",
@@ -28,6 +19,7 @@
     "babelify": "^7.3.0",
     "browserify": "^13.0.1",
     "chai": "^3.5.0",
+    "classnames": "^2.2.5",
     "coveralls": "^2.11.9",
     "del": "^2.2.0",
     "enzyme": "^2.3.0",
@@ -48,27 +40,22 @@
     "postcss-cssnext": "^2.5.2",
     "postcss-easy-import": "^1.0.1",
     "postcss-mixins": "^4.0.1",
+    "react": "^15.0.2",
+    "react-addons-create-fragment": "^15.0.1",
+    "react-addons-pure-render-mixin": "^15.0.2",
     "react-addons-test-utils": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-router": "^2.4.0",
     "rucksack-css": "^0.8.6",
     "sinon": "^1.17.4",
     "stylelint": "^6.3.3",
     "stylelint-config-standard": "^7.0.0",
     "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "underscore": "^1.8.3"
   },
   "eslintConfig": {
-    "extends": "airbnb",
-    "rules": {
-      "import/no-unresolved": [
-        2,
-        {
-          "ignore": [
-            "^meteor/"
-          ]
-        }
-      ],
-      "no-underscore-dangle": 0
-    }
+    "extends": "airbnb"
   },
   "stylelint": {
     "extends": "stylelint-config-standard",
