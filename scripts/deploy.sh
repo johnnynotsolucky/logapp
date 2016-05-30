@@ -12,6 +12,4 @@ case "$branch" in
     aws configure set preview.cloudfront true
     aws cloudfront create-invalidation --distribution-id $AWS_CF_DISTRIBUTION_ID --paths /rev-manifest.json > /dev/null
     ;;
-*)
-    echo "NO";;
 esac
