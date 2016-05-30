@@ -2,11 +2,21 @@ import alt from '../alt';
 import random from 'meteor-random';
 
 class TaskActions {
-  newTask(taskDetails) {
+  newQuickTask(text) {
     return {
       id: random.id(),
-      details: taskDetails,
+      startedAt: new Date(),
+      completed: false,
+      text,
     };
+  }
+
+  updateTask(task) {
+    return task;
+  }
+
+  deleteTask(task) {
+    return task;
   }
 }
 

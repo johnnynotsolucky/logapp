@@ -5,7 +5,7 @@ import { assert } from 'chai';
 import { shallow } from 'enzyme';
 import sinon from 'sinon';
 
-import Header from '../../../app/components/Header';
+import Header from '../../app/components/Header';
 
 describe('components/<Header />', () => {
   const props = {
@@ -17,7 +17,7 @@ describe('components/<Header />', () => {
 
   it('calls the toggleNavDrawer callback', () => {
     wrapper.find('.app_menu_item.toggle_nav_drawer').simulate('click');
-    assert.equal(props.toggleNavDrawer.clickedOnce);
+    assert.equal(props.toggleNavDrawer.calledOnce, true);
   });
 
   it('renders the nav drawer toggle button without the nav_drawer_open css class', () => {

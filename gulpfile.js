@@ -86,4 +86,8 @@ gulp.task('rev', ['build-static'], () =>
 
 gulp.task('cleanup', () => del('build'));
 
+gulp.task('watch', () => {
+  gulp.watch('./app/**/*.*', ['build']);
+});
+
 gulp.task('build', ['rev']);

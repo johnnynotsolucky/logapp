@@ -1,18 +1,20 @@
 import React from 'react';
 
 import TaskStore from '../../stores/TaskStore';
-import TaskActions from '../../actions/TaskActions';
 
-import Task from './Task.jsx';
+import TaskItem from './TaskItem.jsx';
+
+import moment from 'moment';
+import _ from 'underscore';
 
 class TaskList extends React.Component {
   constructor() {
     super();
     this.state = TaskStore.getState();
-    
+
     this.onChange = this.onChange.bind(this);
   }
-  
+
   componentDidMount() {
     TaskStore.listen(this.onChange);
   }
@@ -26,15 +28,14 @@ class TaskList extends React.Component {
   }
 
   renderTasks() {
-    const { tasks } = this.state;
+    let { tasks } = this.state;
+    tasks = _.sortBy(tasks, (t) => moment(t.startedAt).valueOf).reverse();
 
-    return tasks.map((task) => {
-      return (
-        <li key={task.id}>
-          <Task task={task}/>
-        </li>
-      );
-    });
+    return tasks.map((task) =>
+      <li key={task.id}>
+        <TaskItem task={task} />
+      </li>
+    );
   }
 
   render() {

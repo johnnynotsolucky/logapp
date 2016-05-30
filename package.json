@@ -37,6 +37,7 @@
     "gulp-uglify": "^1.5.3",
     "meteor-random": "0.0.3",
     "mocha": "^2.5.2",
+    "moment": "^2.13.0",
     "nyc": "^6.4.4",
     "postcss-cssnext": "^2.5.2",
     "postcss-easy-import": "^1.0.1",
