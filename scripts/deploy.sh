@@ -1,7 +1,6 @@
 #!/bin/sh
 
-branch=$(git symbolic-ref --short -q HEAD)
-case "$branch" in
+case "$(git symbolic-ref --short -q HEAD)" in
 "master") 
     npm run "build"
 
