@@ -13,9 +13,9 @@ export default class TaskDates extends React.Component {
     let formattedDate;
 
     if (!!date) {
-      formattedDate = this.DEFAULT_DATE_TEXT;
-    } else {
       formattedDate = moment(date).format('DD/MM/YYYY HH:mm');
+    } else {
+      formattedDate = this.DEFAULT_DATE_TEXT;
     }
 
     return formattedDate;
@@ -26,9 +26,9 @@ export default class TaskDates extends React.Component {
 
     return (
       <div className="task_parameters_dates">
-        <span>{this.renderDateOrDefault(startedAt)}</span>
+        <span className="task_started_at">{this.renderDateOrDefault(startedAt)}</span>
         <span> - </span>
-        <span>{this.renderDateOrDefault(endedAt)}</span>
+        <span className="task_ended_at">{this.renderDateOrDefault(endedAt)}</span>
       </div>
     );
   }
