@@ -19,14 +19,14 @@ describe('components/tasks/<TaskList />', () => {
   });
 
   it('renders 1 <TaskItem /> component', () => {
-    wrapper.setState({ tasks: [{ id: 1 },] });
+    wrapper.setState({ tasks: [{ id: 1 }] });
     const tasks = wrapper.find(TaskItem);
     assert.equal(tasks.length, 1);
   });
 
   it('renders 30 <TaskItem /> components', () => {
     const tasks = [];
-    for(let i = 0; i < 30; i++) {
+    for (let i = 0; i < 30; i++) {
       tasks.push({ id: i });
     }
 
@@ -38,7 +38,7 @@ describe('components/tasks/<TaskList />', () => {
   it('renders <TaskItem /> components sorted by start date', () => {
     const date = moment();
     const tasks = [];
-    for(let i = 0; i < 30; i++) {
+    for (let i = 0; i < 30; i++) {
       date.subtract(1, 'd');
       tasks.push({ id: i, startedAt: date.toDate() });
     }
