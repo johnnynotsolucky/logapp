@@ -1,12 +1,23 @@
 import React from 'react';
 
+import falsy from 'falsy';
+
 import TaskActions from '../../actions/TaskActions';
 
 class NewTask extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      taskText: '',
+    };
 
+    this.handleTaskTextChanged = this.handleTaskTextChanged.bind(this);
     this.createTask = this.createTask.bind(this);
+  }
+  
+  handleTaskTextChanged(e) {
+    this.setState({ taskText: e.target.value });
   }
 
   createTask(e) {
@@ -14,10 +25,13 @@ class NewTask extends React.Component {
       e.preventDefault();
     }
 
-    const { newTaskText } = this.refs;
-    TaskActions.newQuickTask(newTaskText.value);
+    const { taskText } = this.state;
 
-    newTaskText.value = '';
+    if(!falsy(taskText, { ws: true })) {
+      TaskActions.newQuickTask(taskText);
+    }
+
+    this.setState({ taskText: '' });
   }
 
   render() {
@@ -25,7 +39,7 @@ class NewTask extends React.Component {
       <section className="new_task_container">
         <form onSubmit={this.createTask}>
           <div className="new_task">
-            <input ref="newTaskText" placeholder="What are you working on?" />
+            <input placeholder="What are you working on?" value={this.state.taskText} onChange={this.handleTaskTextChanged} />
           </div>
           <button type="submit" className="new_task_button">
             <div>
