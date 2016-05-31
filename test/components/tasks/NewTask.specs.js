@@ -47,4 +47,16 @@ describe('components/tasks/<NewTask />', () => {
 
     TaskActions.newQuickTask.restore();
   });
+
+  it('updates the state with new text', () => {
+    const mockEvent = {
+      target: {
+        value: faker.lorem.sentence(),
+      },
+    };
+
+    const input = wrapper.find('.new_task input');
+    input.simulate('change', mockEvent);
+    assert.equal(wrapper.state().taskText, mockEvent.target.value);
+  });
 });

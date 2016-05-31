@@ -1,6 +1,7 @@
 import React from 'react';
 
 import falsy from 'falsy';
+import preventDefault from 'prevent-default-wrapper';
 
 import TaskActions from '../../actions/TaskActions';
 
@@ -20,11 +21,7 @@ class NewTask extends React.Component {
     this.setState({ taskText: e.target.value });
   }
 
-  createTask(e) {
-    if (e) {
-      e.preventDefault();
-    }
-
+  createTask() {
     const { taskText } = this.state;
 
     if (!falsy(taskText, { ws: true })) {
@@ -42,7 +39,7 @@ class NewTask extends React.Component {
 
     return (
       <section className="new_task_container">
-        <form onSubmit={this.createTask}>
+        <form onSubmit={preventDefault(this.createTask)}>
           <div className="new_task">
             <input placeholder="What are you working on?" {...inputProps} />
           </div>
